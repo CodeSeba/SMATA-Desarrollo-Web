@@ -79,7 +79,7 @@ public class ArticuloMLR implements I_Articulo_OnLine<ArticuloML>{
 						// por cada dato que necesitamos.
 						item_id			= getSubstring(lineaArticulo, "item-id=\"", "\"><div class=\"carousel\">");
 						item_url		= getSubstring(lineaArticulo, "item-url=\"", "\" item-id=\"");
-						image_content	= getSubstring(lineaArticulo, "src='", "' srcset='");
+						image_content	= getSubstring(lineaArticulo, "src='", "' "); // "' srcset='" no funciona con todos
 						price__fraction = getSubstring(
 												lineaArticulo,
 												"<span class=\"price__fraction\">",
