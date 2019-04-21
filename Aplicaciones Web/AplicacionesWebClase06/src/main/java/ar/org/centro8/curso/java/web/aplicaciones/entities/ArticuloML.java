@@ -3,21 +3,19 @@ package ar.org.centro8.curso.java.web.aplicaciones.entities;
 public class ArticuloML {
 	private String item_id;
 	private String item_url;
-	private String item_info;
 	private String image_content;
 	private String price_fraction;
 
-	public ArticuloML(String item_id, String item_url, String item_info, String image_content, String price_fraction) {
+	public ArticuloML(String item_id, String item_url, String image_content, String price_fraction) {
 		this.item_id = item_id;
 		this.item_url = item_url;
-		this.item_info = item_info;
 		this.image_content = image_content;
 		this.price_fraction = price_fraction;
 	}
 
 	@Override
 	public String toString() {
-		return "ArticuloML{" + "item_id=" + item_id + ", item_url=" + item_url + ", item_info=" + item_info + ", image_content=" + image_content + ", price_fraction=" + price_fraction + '}';
+		return "ArticuloML{" + "item_id=" + item_id + ", item_url=" + item_url + ", image_content=" + image_content + ", price_fraction=" + price_fraction + '}';
 	}
 
 	public String getItem_id() {
@@ -36,14 +34,6 @@ public class ArticuloML {
 		this.item_url = item_url;
 	}
 
-	public String getItem_info() {
-		return item_info;
-	}
-
-	public void setItem_info(String item_info) {
-		this.item_info = item_info;
-	}
-
 	public String getImage_content() {
 		return image_content;
 	}
@@ -59,6 +49,5 @@ public class ArticuloML {
 	public void setPrice_fraction(String price_fraction) {
 		this.price_fraction = price_fraction;
 	}
-	
-	
+
 }
