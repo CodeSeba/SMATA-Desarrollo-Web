@@ -43,7 +43,7 @@ public class ArticuloMLR implements I_Articulo_OnLine<ArticuloML>{
 			
 			// Cambie las palabras clave por palabras que encontre que sean únicas.
 			if (line.contains("ol id=\"searchResults\"")) {
-				// ol id.. es la tabla o grilla que contiene todos los articulos.
+				// ol id=... es la tabla o grilla que contiene todos los articulos.
 
 				ArrayDeque<String> colaArticulos = new ArrayDeque();
 
@@ -77,13 +77,13 @@ public class ArticuloMLR implements I_Articulo_OnLine<ArticuloML>{
 						//
 						// La misma idea de buscar palabras clave que no se repitieran
 						// por cada dato que necesitamos.
-						item_id			= getSubstring(lineaArticulo, "item-id=\"", "\"><div class=\"carousel\">");
-						item_url		= getSubstring(lineaArticulo, "item-url=\"", "\" item-id=\"");
-						image_content	= getSubstring(lineaArticulo, "src='", "' "); // "' srcset='" no funciona con todos
+						item_id			= getSubstring(lineaArticulo, "item-id=\"", "\">");
+						item_url		= getSubstring(lineaArticulo, "item-url=\"", "\" ");
+						image_content	= getSubstring(lineaArticulo, "src='", "' ");
 						price__fraction = getSubstring(
 												lineaArticulo,
 												"<span class=\"price__fraction\">",
-												"</span></div>");
+												"</span>");
 						
 						lista.add(new ArticuloML(item_id, item_url, image_content, price__fraction));
 					}
@@ -112,7 +112,7 @@ public class ArticuloMLR implements I_Articulo_OnLine<ArticuloML>{
 			// Otro problema que encontre es que "fin" no aparece en todos los articulos,
 			// por eso lo reemplazo por '">' ya que, de nuevo, los progm. de ML
 			// no fueron consistentes con su código.
-			if ( ! linea.contains(fin) ) fin = "\">";
+			//if ( ! linea.contains(fin) ) fin = "\">";
 			
 			return linea.substring(
 						0, linea.indexOf(fin));
