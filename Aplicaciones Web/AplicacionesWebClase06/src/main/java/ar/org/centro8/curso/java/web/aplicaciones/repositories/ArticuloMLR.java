@@ -53,9 +53,6 @@ public class ArticuloMLR implements I_Articulo_OnLine<ArticuloML>{
 						lineaArticulo = cola.poll();
 						
 						try {
-							System.out.println("++++++++++++++++++++++++++++++++++++++");
-							System.out.println(lineaArticulo.substring(9, 115));
-							System.out.println("++++++++++++++++++++++++++++++++++++++");
 							image_content = lineaArticulo.substring(9, 117);
 						} catch (Exception e) { }
 						
@@ -79,6 +76,10 @@ public class ArticuloMLR implements I_Articulo_OnLine<ArticuloML>{
 						for (int a=1; a<=7; a++){
 							lineaArticulo = colaArticulos.poll();
 						}
+						
+						System.out.println("---------------------------------");
+                        System.out.println(lineaArticulo);
+                        System.out.println("---------------------------------");
 						
 						try {
 							item_url = lineaArticulo.substring(37, 115);
