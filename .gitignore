@@ -1,0 +1,38 @@
+# Git repository specific
+Drivers/*
+!Drivers/readme.txt
+Servers/*
+!Servers/readme.txt
+
+# Tomcat embeded specific
+**/tomcat.*/
+
+# Maven specific 
+**/target/
+*.class
+
+# Netbeans specific
+**/dist/
+**/nbdist/
+**/build/
+**/nbbuild/
+**/nbproject/private/
+
+# Package Files
+*.jar
+*.war
+*.ear
+
+# General swap/backup files
+*.so
+*.log
+*.out
+*~
+*.swp
+*.DS_Store
+*.lock
+
+# Exceptions
+!**/nbproject/project.properties
+!**/nbproject/project.xml
+!**/lib/*.jar

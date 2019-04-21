@@ -1,0 +1,16 @@
+Curso: Desarrollo de Aplicaciones WEB 60 hs.
+Días: Miércloes 15:00 a 18:30 hs.
+Profe: Carlos Ríos
+mail: lawlercarlospatricio@gmail.com
+
+Software:	JDK 8.X		OpenJDK 8
+			JDK 11		OpenJKD 11
+			Netbeans IDE 8.X	Netbeans IDE 10 o sup.
+			
+Java EE:	Apache TomEE (no TomCat)
+			Eclipse GlassFish (no JETTY) (JAKARTA)
+			RedHat WildFly
+
+	LTS - Long Term Suppport (8 años)
+
+	ar.org.centro8.curso.java.web.aplicaciones
