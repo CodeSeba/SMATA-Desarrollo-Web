@@ -9,8 +9,10 @@ public class TestMLR {
 		ArticuloMLR amlr = new ArticuloMLR();
 		
 		List<ArticuloML> lista = amlr.getByCriteria("motos");
-		System.out.println("-----------------------------------------------------");
+		System.out.println("------------------------------------------------------------------");
 		System.out.println("Longitud de lista: " + lista.size());
+		System.out.println("Recordar que la primera linea no contiene un articulo en \"line\".");
+		System.out.println("------------------------------------------------------------------");
 		lista.forEach(System.out::println);
 	}
 }
