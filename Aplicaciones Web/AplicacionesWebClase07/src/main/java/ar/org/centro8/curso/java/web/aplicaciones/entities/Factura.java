@@ -1,6 +1,6 @@
 package ar.org.centro8.curso.java.web.aplicaciones.entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Factura {
 	private int id;
