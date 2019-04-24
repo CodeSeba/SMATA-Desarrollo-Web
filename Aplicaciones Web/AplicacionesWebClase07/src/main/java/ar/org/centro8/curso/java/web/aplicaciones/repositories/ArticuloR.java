@@ -31,7 +31,7 @@ public class ArticuloR implements I_ArticuloR{
 		List<Articulo> lista = getAll()
 								.stream()
 								.filter(a -> a.getId() == id)
-								.collect( Collectors.toList());
+								.collect(Collectors.toList());
 								//.collect( Collectors.toCollection(ArrayList::new) );
 		return (lista.isEmpty() || lista == null) ? null : lista.get(0);
 	}
