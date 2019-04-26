@@ -4,10 +4,11 @@
     Author     : seba
 --%>
 
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"	%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"	%>
+<%@ taglib prefix="c"	uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="ar.org.centro8.curso.java.web.interfaces.entities.User"%>
 <%@page import="ar.org.centro8.curso.java.web.interfaces.repositories.UserR"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -96,5 +97,26 @@
 				</tr>
 			</c:forEach>
 		</table>
+		
+		<hr><br>
+		
+		<!-- JSTL SQL -->
+		<sql:setDataSource
+			var="ds"
+			driver="com.mysql.cj.jdbc.Driver"
+			url="jdbc:mysql://localhost/cursoJavaWebNegocio"
+			user="root"
+			password="" />
+		
+		<sql:query var="allRows" dataSource="${ds}">
+			select id,descripcion,costo,precio,stock,stockMin,stockMax from articulos;
+		</sql:query>
+		
+		<c:forEach var="u" items="${allRows.rows}">
+			<br>
+			<c:out value="${u.id} ${u.descripcion} ${u.costo} ${u.precio} 
+							${u.stock} ${u.stockMin} ${u.stockMax}" />
+		</c:forEach>
+		
     </body>
 </html>
