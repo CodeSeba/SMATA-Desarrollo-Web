@@ -100,13 +100,15 @@
 						+ "</tr>");
 				while (rs.next()) {
 					out.println("<tr>");
-					out.println("<td>" + rs.getString(1) +"</td>");
-					out.println("<td>" + rs.getString(2) +"</td>");
-					out.println("<td>" + rs.getString(3) +"</td>");
-					out.println("<td>" + rs.getString(4) +"</td>");
-					out.println("<td>" + rs.getString(5) +"</td>");
-					out.println("<td>" + rs.getString(6) +"</td>");
-					out.println("<td>" + rs.getString(7) +"</td>");
+					
+					out.println("<td>" + rs.getInt("id") +"</td>");
+					out.println("<td>" + rs.getString("descripcion") +"</td>");
+					out.println("<td>" + rs.getString("costo") +"</td>");
+					out.println("<td>" + rs.getDouble("precio") +"</td>");
+					out.println("<td>" + rs.getInt("stock") +"</td>");
+					out.println("<td>" + rs.getInt("stockMin") +"</td>");
+					out.println("<td>" + rs.getInt("stockMax") +"</td>");
+					
 					out.println("</tr>");
 				}
 			} catch(Exception ex) { out.println("Error en XXXXXXXXXXXXX"); }
