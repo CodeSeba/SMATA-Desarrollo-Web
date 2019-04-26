@@ -83,10 +83,22 @@
 			} else { out.println("<h3>Error de Validación de datos.</h3>"); }
 		%>
 		
+		<form>
+			Buscar Articulo:
+			<input type=text name="buscarArticulo" />
+			<input type=submit value="Buscar" />
+		</form>
+		<br>
+		
 		<%
+			String buscar = "";
+			try {
+					buscar = request.getParameter("buscarArticulo");
+			} catch (Exception e) {	}
+			
 			try (ResultSet rs = conn
 					.createStatement()
-					.executeQuery("select * from articulos");
+					.executeQuery("select * from articulos where descripcion like '%"+buscar+"%'");
 				) {
 				out.println("<table border=1>");
 				out.println("<tr>"
