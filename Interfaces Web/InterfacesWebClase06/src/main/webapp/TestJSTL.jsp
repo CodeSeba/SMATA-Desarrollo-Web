@@ -4,6 +4,8 @@
     Author     : seba
 --%>
 
+<%@page import="ar.org.centro8.curso.java.web.interfaces.entities.User"%>
+<%@page import="ar.org.centro8.curso.java.web.interfaces.repositories.UserR"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -64,5 +66,35 @@
 			Iteración #<c:out value="${status.count}" />
 			<br>
 		</c:forEach>
+		
+		<hr><br>
+		
+		<%
+			UserR.add(new User("1", "Ana", "ana@mail.com"));
+			UserR.add(new User("2", "Juan", "juan@mail.com"));
+			UserR.add(new User("3", "Jose", "jose@mail.com"));
+			UserR.add(new User("4", "Carlos", "carlos@mail.com"));
+			UserR.add(new User("5", "Maria", "maria@mail.com"));
+		%>
+		
+		<jsp:useBean id="userR" scope="request"
+					 class="ar.org.centro8.curso.java.web.interfaces.repositories.UserR"/>
+		<c:forEach var="u" items="${userR.getAll()}">
+			<c:out value="${u.id} ${u.name} ${u.email}" />
+			<br>
+		</c:forEach>
+		
+		<hr><br>
+		
+		<table border="1">
+			<tr><th>id</th><th>nombre</th><th>email</th></tr>
+			<c:forEach var="u" items="${userR.getAll()}">
+				<tr>
+					<td><c:out value="${u.id}" /></td>
+					<td><c:out value="${u.name}" /></td>
+					<td><c:out value="${u.email}" /></td>
+				</tr>
+			</c:forEach>
+		</table>
     </body>
 </html>
