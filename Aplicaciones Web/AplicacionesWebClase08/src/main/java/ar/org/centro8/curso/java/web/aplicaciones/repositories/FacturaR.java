@@ -21,7 +21,7 @@ public class FacturaR implements I_FacturaR {
 	public Factura getByLetraNumero(char letra, int numero) {
 		List<Factura> lista = getAll()
 								.stream()
-								.filter(f -> f.getId() == letra && f.getNumero() == numero)
+								.filter(f -> f.getLetra() == letra && f.getNumero() == numero)
 								.collect(Collectors.toList());
 		return (lista.isEmpty() || lista == null) ? null : lista.get(0);
 	}
