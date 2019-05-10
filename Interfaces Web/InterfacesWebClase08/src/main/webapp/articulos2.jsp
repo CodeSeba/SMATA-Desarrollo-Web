@@ -51,7 +51,28 @@
             }
         %>
         
-        <% new TablaHtml<Articulo>().getTabla(new ArticuloR(ConnectorMySQL.getConnection()).getAll()); %>
+		<br><br>
+		<form>
+			Buscar Articulo:
+			<input type=text name="buscarArticulo" />
+			<input type=submit value="Buscar" />
+		</form>
+		<br>
+		
+		<%
+			String buscar = "";
+			try {
+					buscar = request.getParameter("buscarArticulo");
+				} catch (Exception e) { }
+			
+			if (buscar == null) buscar = "";
+			out.println(new TablaHtml<Articulo>()
+							.getTabla(
+									new ArticuloR(ConnectorMySQL.getConnection())
+										.getLikeDescripcion(buscar)
+							)
+			);
+		%>
         
     </body>
 </html>

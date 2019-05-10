@@ -38,14 +38,15 @@ public class ArticuloR implements I_ArticuloR{
                 .collect(Collectors.toList());
     }
     @Override public List<Articulo> getLikeDescripcion(String descripcion) {
-        return getAll()
+		return getAll()
                 .stream()
-                .filter(a->a
+                .filter(a -> a
                         .getDescripcion()
                         .toLowerCase()
                         .contains(descripcion.toLowerCase()))
                 .collect(Collectors.toList());
     }
+	
     @Override public void save(Articulo e) {
         if(e==null) return;
         String query="insert into articulos "

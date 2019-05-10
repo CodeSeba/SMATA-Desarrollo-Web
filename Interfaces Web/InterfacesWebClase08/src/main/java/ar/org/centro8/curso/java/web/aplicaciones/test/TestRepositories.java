@@ -74,7 +74,6 @@ public class TestRepositories {
                                 ar.getReponerCantidad(item)));
         
         
-        //ar.getLikeDescripcion("pi").forEach(System.out::println);
         
         
         Articulo articulox=ar.getById(4);
@@ -86,6 +85,8 @@ public class TestRepositories {
         ar.remove(ar.getById(5));
         ar.getAll().forEach(System.out::println);
         
+		System.out.println("+++++++.getLikeDescripcion++++++++++++++++++");
+        ar.getLikeDescripcion("ba").forEach(System.out::println);
         
     }
 }
