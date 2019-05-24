@@ -23,7 +23,7 @@ public class ClienteServicio {
 	@Path("/add")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String add(
-				@QueryParam("nombre")			String nombre,
+				@QueryParam("letra")			String nombre,
 				@QueryParam("apellido")			String apellido,
 				@QueryParam("tipoDocumento")	String tipoDocumento,
 				@QueryParam("numeroDocumento")	String numeroDocumento,
@@ -79,6 +79,7 @@ public class ClienteServicio {
 	@Path("/list_like_apellido")
 	@Produces(MediaType.TEXT_PLAIN)
 	public String listLikeApellido(@QueryParam("apellido") String apellido) {
+		if (apellido == null) apellido = "";
 		lista = "";
 		cr.getLikeApellido(apellido).forEach(item -> lista += item + "\n");
 		return lista;

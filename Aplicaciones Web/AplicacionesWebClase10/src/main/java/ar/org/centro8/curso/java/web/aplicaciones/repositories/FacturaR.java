@@ -28,7 +28,10 @@ public class FacturaR implements I_FacturaR {
 
 	@Override
 	public List<Factura> getByFecha(Date date) {
-		throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		return getAll()
+				.stream()
+				.filter(p -> p.getFecha() == date)
+				.collect(Collectors.toList());
 	}
 
 	@Override

@@ -20,8 +20,7 @@ create table facturas(
 	numero int not null,
 	fecha date not null,
 	monto double not null,
-	unique index factura_letra_numero(letra,numero),
-	stockMax int
+	unique index factura_letra_numero(letra,numero)
 );
 
 create table detalles(

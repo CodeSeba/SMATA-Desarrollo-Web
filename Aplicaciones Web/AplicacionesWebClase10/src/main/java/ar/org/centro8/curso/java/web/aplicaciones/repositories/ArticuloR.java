@@ -69,7 +69,7 @@ public class ArticuloR implements I_ArticuloR{
 	public List<Articulo> getLikeDescripcion(String descripcion) {
 		return getAll()
 				.stream()
-				.filter(a -> a.getDescripcion().toLowerCase().contains(descripcion))
+				.filter(a -> a.getDescripcion().toLowerCase().contains(descripcion.toLowerCase()))
 				.collect(Collectors.toList());
 	}
 	

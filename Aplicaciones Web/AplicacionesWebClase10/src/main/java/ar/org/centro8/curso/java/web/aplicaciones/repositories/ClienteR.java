@@ -39,7 +39,7 @@ public class ClienteR implements I_ClienteR{
 	public List<Cliente> getLikeApellido(String apellido) {
 		return getList( getAll()
 				.stream()
-				.filter(c -> c.getApellido().toLowerCase().contains(apellido))
+				.filter(c -> c.getApellido().toLowerCase().contains(apellido.toLowerCase()))
 		);
 	}
 
@@ -56,8 +56,8 @@ public class ClienteR implements I_ClienteR{
 	public List<Cliente> getLikeApellidoNombre(String apellido, String nombre) {
 		return getList( getAll()
 				.stream()
-				.filter(c -> c.getApellido().toLowerCase().contains(apellido)
-					&& c.getNombre().toLowerCase().contains(nombre))
+				.filter(c -> c.getApellido().toLowerCase().contains(apellido.toLowerCase())
+					&& c.getNombre().toLowerCase().contains(nombre.toLowerCase()))
 		);
 	}
 
@@ -88,7 +88,7 @@ public class ClienteR implements I_ClienteR{
 	public List<Cliente> getLikeDireccion(String dirreccion) {
 		return getList( getAll()
 				.stream()
-				.filter(c -> c.getApellido().toLowerCase().contains(dirreccion))
+				.filter(c -> c.getApellido().toLowerCase().contains(dirreccion.toLowerCase()))
 		);
 	}
 
