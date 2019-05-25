@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Formulario de Clientes</title>
+    </h:head>
+    <h:body>
+        <h1>Formulario de Clientes</h1>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputLabel value="Nombre:"/>
+                <h:inputText id="nombre" value="#{clienteMB.cliente.nombre}" title="Nombre" 
+                             required="true" requiredMessage="Este campo es obligatorio"/>
+                <h:outputLabel value="Apellido:"/>
+                <h:inputText id="apellido" value="#{clienteMB.cliente.apellido}" title="Apellido"
+                             required="true" requiredMessage="Este campo es obligatorio"/>
+                <h:outputLabel value="Tipo de Documento:"/>
+                <h:selectOneMenu id="tipoDocumento" value="#{clienteMB.cliente.tipoDocumento}">
+					<f:selectItems value="#{tipoDocumentoMB.all}" />
+				</h:selectOneMenu>
+                <h:outputLabel value="Numero de Documento:"/>
+                <h:inputText id="numeroDocumento" value="#{clienteMB.cliente.numeroDocumento}" title="Numero de Documento"
+                             required="true" requiredMessage="Este campo es obligatorio" />
+                <h:outputLabel value="Direccion:"/>
+                <h:inputText id="direccion" value="#{clienteMB.cliente.direccion}" title="Direccion"
+                             required="true" requiredMessage="Este campo es obligatorio" />
+                <h:outputLabel value="Comentarios:"/>
+                <h:inputText id="comentarios" value="#{clienteMB.cliente.comentarios}" title="Comentarios"
+                             required="true" requiredMessage="Este campo es obligatorio" />
+                <h:commandButton value="Guardar" action="#{clienteMB.save()}"/>
+                <h:outputLabel value="#{clienteMB.mensaje}"/>
+            </h:panelGrid>
+        </h:form>
+        
+		<br />
+		
+        <h:form>
+            <h:outputLabel value="Buscar"/>
+            <h:inputText id="buscar" value="#{clienteMB.buscar}"/>
+            <h:commandButton value="Buscar"/>
+			<br /><br />
+            <h:dataTable value="#{clienteMB.likeApellido}" var="c" border="2" >
+                <h:column> 
+                    <f:facet name="header">Id</f:facet><h:outputText value="#{c.id}"/>               
+                </h:column>
+                <h:column> 
+                    <f:facet name="header">Nombre</f:facet><h:outputText value="#{c.nombre}"/>              
+                </h:column>
+                <h:column> 
+                    <f:facet name="header">Apellido</f:facet><h:outputText value="#{c.apellido}"/>               
+                </h:column>
+                <h:column> 
+                    <f:facet name="header">Tipo de Documento</f:facet><h:outputText value="#{c.tipoDocumento}"/>               
+                </h:column>
+                <h:column> 
+                    <f:facet name="header">Numero de Documento</f:facet><h:outputText value="#{c.numeroDocumento}"/>               
+                </h:column>
+                <h:column> 
+                    <f:facet name="header">Direccion</f:facet><h:outputText value="#{c.direccion}"/>               
+                </h:column>
+                <h:column> 
+                    <f:facet name="header">Comentarios</f:facet><h:outputText value="#{c.comentarios}"/>               
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        
+    </h:body>
+</html>
+

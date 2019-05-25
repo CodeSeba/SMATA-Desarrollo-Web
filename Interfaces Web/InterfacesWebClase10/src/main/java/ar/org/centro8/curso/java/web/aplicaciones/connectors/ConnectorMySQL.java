@@ -3,9 +3,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 public class ConnectorMySQL {
     private static String driver="com.mysql.cj.jdbc.Driver";
-    private static String user="root";
-    private static String pass="root";
-    private static String url="jdbc:mysql://localhost:3306/cursoJavaWebNegocio";
+    // private static String user="root";
+    private static String user="XYi1Z7S7xL";
+    // private static String pass="root";
+    private static String pass="7pa25rFsVE";
+    // private static String url="jdbc:mysql://localhost:3306/cursoJavaWebNegocio";
+    private static String url="jdbc:mysql://remotemysql.com:3306/XYi1Z7S7xL";
     private static Connection conn=null;
     private ConnectorMySQL(){}
     public synchronized static Connection getConnection(){ 
