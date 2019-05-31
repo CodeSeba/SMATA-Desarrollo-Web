@@ -15,7 +15,7 @@
 					<p:outputLabel value="Articulos con Primefaces" />
 				</f:facet>
 				<p:outputLabel value="Descripcion:" />
-				<p:inputText value="#{articuloMB.articulo.descripcion}"/>
+				<p:inputText value="#{articuloMB.articulo.descripcion}" required="true" />
 				<p:outputLabel value="Costo:" />
 				<p:inputText value="#{articuloMB.articulo.costo}"/>
 				<p:outputLabel value="Precio:" />
@@ -26,7 +26,43 @@
 				<p:inputText value="#{articuloMB.articulo.stockMin}"/>
 				<p:outputLabel value="StockMax" />
 				<p:inputText value="#{articuloMB.articulo.stockMax}"/>
+				<p:growl id="growl" life="2000" />
+				<p:commandButton value="Guardar" ajax="false" action="#{articuloMB.save()}"
+								 style="margin-right:20px;" styleClass="ui-priority-primary" />
 			</p:panelGrid>
+
+			<br /> <p:outputLabel value="#{articuloMB.mensaje}" />
+
+		</h:form>
+		
+		<br />
+
+		<h:form>
+			<p:outputLabel value="Buscar: " />
+			<p:inputText id="buscar" value="#{articuloMB.buscar}" />
+			<p:commandButton value="Buscar" ajax="false" />
+			<br /> <br />
+			
+			<p:dataTable var="a" value="#{articuloMB.likeDescripcion}"
+						 rows="10"
+						 paginator="true"
+						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						 rowsPerPageTemplate="5,10,15">
+				
+				<p:column headerText="Id">
+					<h:outputText value="#{a.id}" /></p:column>
+				<p:column headerText="Descripcion">
+					<h:outputText value="#{a.descripcion}" /></p:column>
+				<p:column headerText="Precio">
+					<h:outputText value="#{a.precio}" /></p:column>
+				<p:column headerText="Stock">
+					<h:outputText value="#{a.stock}" /></p:column>
+				<p:column headerText="StockMin">
+					<h:outputText value="#{a.stockMin}" /></p:column>
+				<p:column headerText="StockMax">
+					<h:outputText value="#{a.stockMax}" /></p:column>
+				
+			</p:dataTable>
 		</h:form>
     </h:body>
 </html>

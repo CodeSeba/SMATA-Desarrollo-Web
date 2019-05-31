@@ -1,4 +1,4 @@
-package ar.org.centro8.curso.java.web.interfaces.interfacesclase01.servlets;
+package ar.org.centro8.curso.java.web.aplicaciones.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;

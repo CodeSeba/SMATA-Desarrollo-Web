@@ -34,7 +34,7 @@ public class ClienteR implements I_ClienteR {
     @Override public List<Cliente> getLikeApellido(String apellido) {
         return getList(getAll()
                 .stream()
-                .filter(c->c.getApellido().toLowerCase().contains(apellido))
+                .filter(c->c.getApellido().toLowerCase().contains(apellido.toLowerCase()))
         );
     }
 

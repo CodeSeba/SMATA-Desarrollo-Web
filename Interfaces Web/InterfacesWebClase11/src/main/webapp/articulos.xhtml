@@ -31,12 +31,13 @@
                 <h:commandButton value="Guardar" action="#{articuloMB.save()}" />
                 <h:outputLabel value="#{articuloMB.mensaje}"/>
             </h:panelGrid>
-        </h:form>
-        
+        <br /></h:form><br />
+		
         <h:form>
             <h:outputLabel value="Buscar"/>
             <h:inputText id="buscar" value="#{articuloMB.buscar}"/>
             <h:commandButton value="Buscar"/>
+			
             <h:dataTable value="#{articuloMB.likeDescripcion}" var="a" border="2" >
                 <h:column> 
                     <f:facet name="header">Id</f:facet><h:outputText value="#{a.id}"/>               
