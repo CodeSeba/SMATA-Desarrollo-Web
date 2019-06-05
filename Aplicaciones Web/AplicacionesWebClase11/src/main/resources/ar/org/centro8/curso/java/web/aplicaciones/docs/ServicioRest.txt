@@ -1,0 +1,83 @@
+Servicio de Clientes
+url:http://localhost:8081/AplicacionesClase09/webresources/clientes/v1
+
+path		:	/add
+request		:	String nombre, String apellido, String tipoDocumento,
+				String numeroDocumento, String direccion, String comentarios
+response	:	int id
+
+path		:	/remove
+request		:	int id
+response	:	true/false
+
+path		:	/list
+request		:
+response	:	List<Cliente> lista
+
+path		:	/list_like_apellido
+request		:	String apellido
+response	:	List<Cliente> lista
+
+
+Servicio de Articulos
+url:http://localhost:8081/AplicacionesClase09/webresources/articulos/v1
+
+path		:	/add
+request		:	String descripcion, Double costo, Double precio,
+				int stock, int stockMin, int stockMax
+response	:	int id
+
+path		:	/remove
+request		:	int id
+response	:	true/false
+
+path		:	/list
+request		:
+response	:	List<Articulo> lista
+
+path		:	/list_like_descripcion
+request		:	String descripcion
+response	:	List<Articulo> lista
+
+
+Servicio de Facturas
+url:http://localhost:8081/AplicacionesClase09/webresources/facturas/v1
+
+path		:	/add
+request		:	char letra, int numero, String fecha,
+				double monto, int idCliente
+response	:	int id
+
+path		:	/remove
+request		:	int id
+response	:	true/false
+
+path		:	/list
+request		:
+response	:	List<Factura> lista
+
+path		:	/list_by_cliente
+request		:	int idCliente
+response	:	List<Factura> lista
+
+
+Servicio de Detalles
+url:http://localhost:8081/AplicacionesClase09/webresources/detalles/v1
+
+path		:	/add
+request		:	String nombre, String apellido, String tipoDocumento,
+				String numeroDocumento, String direccion, String comentarios
+response	:	int id
+
+path		:	/remove
+request		:	int id
+response	:	true/false
+
+path		:	/list
+request		:
+response	:	List<Cliente> lista
+
+path		:	/list_like_apellido
+request		:	String apellido
+response	:	List<Cliente> lista
+
