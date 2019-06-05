@@ -17,6 +17,7 @@ public class ApplicationConfig extends Application {
 		resources.add(ar.org.centro8.curso.java.web.aplicaciones.rest.TestRest.class);
 		resources.add(ar.org.centro8.curso.java.web.aplicaciones.rest.servicios.ArticuloServicio.class);
 		resources.add(ar.org.centro8.curso.java.web.aplicaciones.rest.servicios.ClienteServicio.class);
+		resources.add(ar.org.centro8.curso.java.web.aplicaciones.rest.servicios.DetalleServicio.class);
 		resources.add(ar.org.centro8.curso.java.web.aplicaciones.rest.servicios.FacturaServicio.class);
 	}
 	

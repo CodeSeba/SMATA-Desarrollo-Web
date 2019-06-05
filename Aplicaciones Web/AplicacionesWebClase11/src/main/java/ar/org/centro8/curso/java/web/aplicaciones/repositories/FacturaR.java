@@ -17,6 +17,14 @@ public class FacturaR implements I_FacturaR {
 	private Connection conn;
 	public FacturaR(Connection conn) { this.conn = conn; }
 	
+	public Factura getById(int idFactura) {
+		List<Factura> lista = getAll()
+								.stream()
+								.filter(f -> f.getId() == idFactura)
+								.collect(Collectors.toList());
+		return (lista.isEmpty() || lista == null) ? null : lista.get(0);
+	}
+	
 	@Override
 	public Factura getByLetraNumero(char letra, int numero) {
 		List<Factura> lista = getAll()

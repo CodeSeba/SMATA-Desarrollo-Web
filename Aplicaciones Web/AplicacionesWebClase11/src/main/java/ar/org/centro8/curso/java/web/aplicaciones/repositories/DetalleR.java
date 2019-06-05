@@ -1,6 +1,6 @@
 package ar.org.centro8.curso.java.web.aplicaciones.repositories;
 
-import ar.org.centro8.curso.java.web.aplicaciones.connectors.ConnectorMySQL;
+//import ar.org.centro8.curso.java.web.aplicaciones.connectors.ConnectorMySQL;
 import ar.org.centro8.curso.java.web.aplicaciones.entities.Articulo;
 import ar.org.centro8.curso.java.web.aplicaciones.entities.Detalle;
 import ar.org.centro8.curso.java.web.aplicaciones.entities.Factura;
@@ -22,6 +22,8 @@ public class DetalleR implements I_DetalleR {
 
 	@Override
 	public Detalle getByFacturaArticulo(Factura factura, Articulo articulo) {
+		System.out.println(factura);
+		System.out.println(articulo);
 		List<Detalle> lista = getAll()
 				.stream()
 				.filter(d -> d.getIdFactura() == factura.getId() && d.getIdArticulo() == articulo.getId())
@@ -31,6 +33,7 @@ public class DetalleR implements I_DetalleR {
 
 	@Override
 	public Detalle getByFacturaArticulo(char letra, int numero, int idArticulo) {
+		System.out.println("letra: "+letra+" numero :"+numero);
 		FacturaR fr = new FacturaR(conn);
 		ArticuloR ar = new ArticuloR(conn);
 		
@@ -53,13 +56,13 @@ public class DetalleR implements I_DetalleR {
 
 	@Override
 	public void save(Detalle e) {
-		String query = "insert into detalles (idfactura,idArticulo,cantidad,precioUnit) "
+		String query = "insert into detalles (idFactura,idArticulo,cantidad,precioUnit) "
 				+ "values (?,?,?,?)";
 		// No hace falta solicitar los keys generados
 		// porque la base sql, el primary key es compuesta.
 		try (PreparedStatement ps = conn.prepareStatement(query)) {
-			ps.setInt(1, e.getIdArticulo());
-			ps.setInt(2, e.getIdFactura());
+			ps.setInt(1, e.getIdFactura());
+			ps.setInt(2, e.getIdArticulo());
 			ps.setInt(3, e.getCantidad());
 			ps.setDouble(4, e.getPrecioUnit());
 			ps.execute();

@@ -65,19 +65,19 @@ Servicio de Detalles
 url:http://localhost:8081/AplicacionesClase09/webresources/detalles/v1
 
 path		:	/add
-request		:	String nombre, String apellido, String tipoDocumento,
+request		:	int idFactura, int idArticulo, int cantidad, double precioUnit
 				String numeroDocumento, String direccion, String comentarios
-response	:	int id
+response	:	true/false
 
 path		:	/remove
-request		:	int id
+request		:	int idFactura, int idArticulo
 response	:	true/false
 
 path		:	/list
 request		:
-response	:	List<Cliente> lista
+response	:	List<Detalle> lista
 
-path		:	/list_like_apellido
-request		:	String apellido
-response	:	List<Cliente> lista
+path		:	/list_by_factura
+request		:	int idFactura
+response	:	List<Detalle> lista
 
