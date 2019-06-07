@@ -5,6 +5,7 @@ import javax.faces.bean.SessionScoped;
 import ar.org.centro8.curso.java.web.aplicaciones.entities.Cliente;
 import ar.org.centro8.curso.java.web.aplicaciones.repositories.ClienteR;
 import ar.org.centro8.curso.java.web.aplicaciones.connectors.ConnectorMySQL;
+import ar.org.centro8.curso.java.web.interfaces.views.GrowlView;
 import java.util.List;
 
 @ManagedBean(name = "clienteMB")
@@ -27,6 +28,8 @@ public class ClienteMB {
 		cr.save(cliente);
 		mensaje = "Se guardo el cliente id= " + cliente.getId();
 		cliente = new Cliente();
+		GrowlView gv = new GrowlView();
+		gv.saveMessage(mensaje);
 	}
 
 	public List<Cliente> getAll() {

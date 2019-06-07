@@ -28,7 +28,7 @@
 				<p:inputText value="#{clienteMB.cliente.direccion}"/>
 				<p:outputLabel value="Comentarios:" />
 				<p:inputText value="#{clienteMB.cliente.comentarios}"/>
-				<p:growl id="growl" life="2000" />
+				<p:growl id="growl" showDetail="true" life="5000" />
 				<p:commandButton value="Guardar" ajax="false" action="#{clienteMB.save()}"
 								 style="margin-right:20px;" styleClass="ui-priority-primary" />
 			</p:panelGrid>
@@ -46,7 +46,7 @@
 			<br /> <br />
 			
 			<p:dataTable var="c" value="#{clienteMB.likeApellido}"
-						 rows="10"
+						 rows="8"
 						 paginator="true"
 						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
 						 rowsPerPageTemplate="5,10,15">
