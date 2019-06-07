@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Clientes Primefaces</title>
+    </h:head>
+    <h:body>
+		<!-- Clientes con PrimeFaces -->
+		<h:form>
+			<p:panelGrid columns="2">
+				<f:facet name="header">
+					<p:outputLabel value="Clientes con Primefaces" />
+				</f:facet>
+				<p:outputLabel value="Nombre:" />
+				<p:inputText value="#{clienteMB.cliente.nombre}" required="true" />
+				<p:outputLabel value="Apellido:" />
+				<p:inputText value="#{clienteMB.cliente.apellido}"/>
+				<p:outputLabel value="Tipo de Documento:" />
+				<p:selectOneMenu value="#{clienteMB.cliente.tipoDocumento}">
+					<f:selectItems value="#{tipoDocumentoMB.all}" />
+				</p:selectOneMenu>
+				<p:outputLabel value="Numero de Documento:" />
+				<p:inputText value="#{clienteMB.cliente.numeroDocumento}"/>
+				<p:outputLabel value="Direccion:" />
+				<p:inputText value="#{clienteMB.cliente.direccion}"/>
+				<p:outputLabel value="Comentarios:" />
+				<p:inputText value="#{clienteMB.cliente.comentarios}"/>
+				<p:growl id="growl" life="2000" />
+				<p:commandButton value="Guardar" ajax="false" action="#{clienteMB.save()}"
+								 style="margin-right:20px;" styleClass="ui-priority-primary" />
+			</p:panelGrid>
+
+			<br /><p:outputLabel value="#{clienteMB.mensaje}" />
+
+		</h:form>
+		
+		<br />
+
+		<h:form>
+			<p:outputLabel value="Buscar: " />
+			<p:inputText id="buscar" value="#{clienteMB.buscar}" />
+			<p:commandButton value="Buscar" ajax="false" />
+			<br /> <br />
+			
+			<p:dataTable var="c" value="#{clienteMB.likeApellido}"
+						 rows="10"
+						 paginator="true"
+						 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+						 rowsPerPageTemplate="5,10,15">
+				
+				<p:column headerText="Id">
+					<h:outputText value="#{c.id}" /></p:column>
+				<p:column headerText="Nombre">
+					<h:outputText value="#{c.nombre}" /></p:column>
+				<p:column headerText="Apellido">
+					<h:outputText value="#{c.apellido}" /></p:column>
+				<p:column headerText="Tipo de Documento">
+					<h:outputText value="#{c.tipoDocumento}" /></p:column>
+				<p:column headerText="Numero de Documento">
+					<h:outputText value="#{c.numeroDocumento}" /></p:column>
+				<p:column headerText="Direccion">
+					<h:outputText value="#{c.direccion}" /></p:column>
+				<p:column headerText="Comentarios">
+					<h:outputText value="#{c.comentarios}" /></p:column>
+				
+			</p:dataTable>
+		</h:form>
+    </h:body>
+</html>
+
