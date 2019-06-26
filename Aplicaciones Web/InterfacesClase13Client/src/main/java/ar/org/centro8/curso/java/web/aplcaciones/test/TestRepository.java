@@ -8,7 +8,7 @@ import ar.org.centro8.curso.java.web.aplicaciones.repositories.cliente.rest.Clie
 
 public class TestRepository {
     public static void main(String[] args) {
-        String url="http://172.16.19.254:8081/Servidor/webresources/articulos/v1";
+        String url="http://172.16.23.111:8081/Servidor/webresources/articulos/v1";
         ArticuloR ar=new ArticuloR(url);
         Articulo articulo=new Articulo("Coco_Rayado", 20, 40, 40, 40, 80);
         ar.save(articulo);
@@ -17,7 +17,7 @@ public class TestRepository {
         //ar.getAll().forEach(System.out::println);
         ar.getLikeDescripcion("co").forEach(System.out::println);
         System.out.println("*************************************************");
-        url="http://172.16.19.254:8081/Servidor/webresources/clientes/v1";
+        url="http://172.16.23.111:8081/Servidor/webresources/clientes/v1";
         ClienteR cr=new ClienteR(url);
         Cliente cliente=new Cliente("Cristian", "Molina", TipoDocumento.DNI, "1234567", "Larrea_123", "_");
         cr.save(cliente);

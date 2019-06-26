@@ -1,16 +1,15 @@
 package ar.org.centro8.curso.java.web.aplicaciones.repositories.cliente.rest;
+import ar.org.centro8.curso.java.web.aplicaciones.entities.Articulo;
 import ar.org.centro8.curso.java.web.aplicaciones.entities.Cliente;
+import ar.org.centro8.curso.java.web.aplicaciones.entities.Factura;
 import ar.org.centro8.curso.java.web.aplicaciones.enums.TipoDocumento;
 import ar.org.centro8.curso.java.web.aplicaciones.repositories.interfaces.I_ClienteR;
 import ar.org.centro8.curso.java.web.aplicaciones.utils.ClientHttp;
 import java.util.ArrayList;
 import java.util.List;
-
 public class ClienteR implements I_ClienteR {
     private String host;
-
-	public ClienteR(String host) { this.host = host; }
-	
+    public ClienteR(String host) { this.host = host; }
     @Override public void save(Cliente e) {
         String url=host+"/add?nombre="+e.getNombre()
                 +"&apellido="+e.getApellido()

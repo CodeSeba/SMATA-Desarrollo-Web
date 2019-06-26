@@ -4,12 +4,9 @@ import ar.org.centro8.curso.java.web.aplicaciones.repositories.interfaces.I_Arti
 import ar.org.centro8.curso.java.web.aplicaciones.utils.ClientHttp;
 import java.util.ArrayList;
 import java.util.List;
-
 public class ArticuloR implements I_ArticuloR {
     private String host;
-	
     public ArticuloR(String host) { this.host = host; }
-	
     @Override public void save(Articulo e) {
         String url=host+"/add?descripcion="+e.getDescripcion()+"&costo="+e.getCosto()
                 +"&precio="+e.getPrecio()+"&stock="+e.getStock()

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <Resource id="negocio" type="javax.sql.DataSource">#Wed Jun 12 16:06:19 ART 2019
+jdbcDriver=com.mysql.cj.jdbc.Driver
+jdbcUrl=jdbc\:mysql\://localhost\:3306/cursoJavaWebNegocio?zeroDateTimeBehavior\=convertToNull
+userName=root
+password=
+</Resource>
+</resources>
