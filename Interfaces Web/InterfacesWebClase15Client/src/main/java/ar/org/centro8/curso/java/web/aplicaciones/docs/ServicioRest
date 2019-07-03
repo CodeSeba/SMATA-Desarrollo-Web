@@ -1,0 +1,79 @@
+Servicio de Clientes
+url: http://localhost:8081/AplicacionesClase09/webresources/clientes/v1
+
+path:       /add                           
+request:    String nombre,String apellido,String tipoDocumento, 
+            String numeroDocumento, String direccion, String comentarios
+response:   int id
+
+path:       /remove
+request:    int id
+response:   true/false
+
+path:       /list
+request:
+response:   List<cliente>
+
+path:       /list_like_apellido
+request:    String apellido
+response:   List<cliente>
+
+
+Servicio de Articulos
+url: http://localhost:8081/AplicacionesClase09/webresources/articulos/v1
+
+path:       /add                           
+request:    String descripcion,float costo,float precio, 
+            int stock, int stockMin, int stock
+response:   int id
+
+path:       /remove
+request:    int id
+response:   true/false
+
+path:       /list
+request:
+response:   List<Articulo>
+
+path:       /list_like_descripcion
+request:    String descripcion
+response:   List<Articulo>
+
+Servicio de Facturas
+url: http://localhost:8081/AplicacionesClase09/webresources/facturas/v1
+path:       /add                           
+request:    char letra,int numero,String fecha, 
+            double monto, int idCliente
+response:   int id
+
+path:       /remove
+request:    int id
+response:   true/false
+
+path:       /list
+request:
+response:   List<Factura>
+
+path:       /list_by_cliente
+request:    int idCliente
+response:   List<factura>
+
+
+Servicio de Detalles
+url: http://localhost:8081/AplicacionesClase11/webresources/detalles/v1
+path:       /add                           
+request:    int idFactura, int idArticulo, int cantidad, double precioUnit
+response:   true/false
+
+path:       /remove
+request:    int idFactura, int idArticulo
+response:   true/false
+
+path:       /list
+request:
+response:   List<Detalle>
+
+path:       /list_by_factura
+request:    char letra, int numero
+response:   List<Detalle>
+
