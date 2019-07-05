@@ -16,7 +16,7 @@ public class ClienteMB {
 
     public ClienteMB() {
         cliente=new Cliente();
-        cr=new ClienteR("http://172.16.7.100:8081/Servidor/webresources/clientes/v1");
+        cr=new ClienteR("http://172.16.1.245:8081/Servidor/webresources/clientes/v1");
         mensaje="";
         buscar="";
     }

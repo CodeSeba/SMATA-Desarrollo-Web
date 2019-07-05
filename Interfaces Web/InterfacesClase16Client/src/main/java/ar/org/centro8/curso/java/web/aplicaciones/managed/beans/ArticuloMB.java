@@ -13,7 +13,7 @@ public class ArticuloMB {
     private String buscar;
     public ArticuloMB() {
         articulo=new Articulo();
-        ar=new ArticuloR("http://172.16.7.100:8081/Servidor/webresources/articulos/v1");
+        ar=new ArticuloR("http://172.16.1.245:8081/Servidor/webresources/articulos/v1");
         mensaje="";
         buscar="";
     }

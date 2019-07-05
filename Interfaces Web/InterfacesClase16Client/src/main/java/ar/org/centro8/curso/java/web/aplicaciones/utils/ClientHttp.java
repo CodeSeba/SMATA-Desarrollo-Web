@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.stream.Collectors;
 public class ClientHttp {
+	
     public String getHTML(String url){
         //String html="";
         //StringBuffer

@@ -8,8 +8,7 @@ public class Factura {
     private double monto;
     private int idCliente;
 
-    public Factura() {
-    }
+    public Factura() { }
 
     public Factura(char letra, int numero, Date fecha, double monto, int idCliente) {
         this.letra = letra;
