@@ -1,7 +1,6 @@
 package ar.org.centro8.curso.java.web.aplicaciones.repositories.jpa;
 
 import ar.org.centro8.curso.java.web.aplicaciones.entities.Cliente;
-import ar.org.centro8.curso.java.web.aplicaciones.entities.Factura;
 import ar.org.centro8.curso.java.web.aplicaciones.repositories.interfaces.I_ClienteR;
 import java.util.List;
 import java.util.stream.Collectors;

@@ -79,6 +79,21 @@ public class Factura implements Serializable {
         this.fecha = fecha;
         this.monto = monto;
     }
+	
+	public Factura(Character letra, int numero, Date fecha, float monto) {
+        this.letra = letra;
+        this.numero = numero;
+        this.fecha = fecha;
+        this.monto = monto;
+    }
+
+	public Factura(Character letra, int numero, Date fecha, float monto, Cliente idCliente) {
+		this.letra = letra;
+		this.numero = numero;
+		this.fecha = fecha;
+		this.monto = monto;
+		this.idCliente = idCliente;
+	}
 
     public Integer getId() {
         return id;
