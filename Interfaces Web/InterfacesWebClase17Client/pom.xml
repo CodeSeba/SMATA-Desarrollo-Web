@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ar.org.centro8.curso.java</groupId>
-    <artifactId>InterfacesClase16Client</artifactId>
+    <artifactId>InterfacesWebClase17Client</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>InterfacesClase16Client</name>
+    <name>InterfacesWebClase17Client</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

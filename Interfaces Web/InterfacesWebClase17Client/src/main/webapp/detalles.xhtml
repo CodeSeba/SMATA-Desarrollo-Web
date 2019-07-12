@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facturas</title>
+    </h:head>
+    <h:body>
+		
+		<!-- http://localhost:8081/InterfacesClase14Client/faces/detalles.xhtml -->
+        
+        <h:form>
+            <p:panelGrid columns="2">
+                <p:outputLabel value="Letra:"/>
+                <p:inputText value="#{facturaMB.factura.letra}" />
+                <p:outputLabel value="Numero:"/>
+                <p:inputText value="#{facturaMB.factura.numero}" />
+                <p:outputLabel value="Fecha:"/>
+                <p:inputText value="#{facturaMB.factura.fecha}" />
+                <p:outputLabel value="Monto:"/>
+                <p:inputText value="#{facturaMB.factura.monto}"/>
+                <p:outputLabel value="IdCliente:"/>
+                <p:inputText value="#{facturaMB.factura.idCliente}"/>
+                <p:commandButton value="Guardar" action="#{facturaMB.save()}" ajax="false"/>
+                <p:outputLabel value="#{facturaMB.mensaje}"/>
+            </p:panelGrid>
+        </h:form>
+        
+        <style type="text/css">
+            .logo {
+                width: 5%
+            }
+
+            .detail {
+                width: 95%;
+                padding-left: 25px;
+            }
+
+            .detail td {
+                font-size: 24px;
+            }
+
+            .ui-datascroller .ui-datascroller-item {
+                border-bottom: 1px solid #A8A8A8;
+                padding: 25px 10px;
+                width: 400px;
+                /* with the exported variables from Nova and Luna Themes*/
+                /* border-bottom-color: var(--input-border-color, #A8A8A8); */
+            }
+        </style>
+        
+        <h:form>
+			<br />
+            <p:outputLabel value="Buscar Articulo: " />
+            <p:inputText id="buscar" value="#{facturaMB.buscar}" />
+            <p:commandButton value="Buscar" ajax="false" />
+			<br />
+			<br />
+            <p:dataScroller value="#{facturaMB.likeArticulo}" var="f" 
+                            chunkSize="10" >
+				<f:facet name="header">
+                    Deslizar para cargar más facturas
+                </f:facet>
+          
+                <p:outputPanel>
+                    <h:panelGrid columns="2" cellpadding="5" 
+                                 columnClasses="logo,detail">
+                        
+                        <h:outputText value="Id"/>
+                        <h:outputText value="#{f.id}" />
+               
+                        <h:outputText value="Letra"/>
+                        <h:outputText value="#{f.letra}" />
+              
+                        <h:outputText value="Numero"/>
+                        <h:outputText value="#{f.numero}" />
+            
+                        <h:outputText value="Fecha"/>
+                        <h:outputText value="#{f.fecha}" />
+        
+                        <h:outputText value="Monto"/>
+                        <h:outputText value="#{f.monto}" />
+               
+                        <h:outputText value="IdCliente"/>
+                        <h:outputText value="#{f.idCliente}" />
+                    </h:panelGrid>
+                </p:outputPanel>
+            </p:dataScroller>
+        </h:form>
+    </h:body>
+</html>
+
